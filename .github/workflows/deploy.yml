@@ -1,0 +1,22 @@
+name: Deploy TPerson
+run-name: ${{ github.actor }} is deploying TPerson 🚀
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  Deploy-TPerson:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Deploy FrontEnd
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          source: "frontend/index.html"
+          target: "/var/www/html/"
