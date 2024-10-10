@@ -30,3 +30,15 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "backend/myapi.py"
           target: "/home/ubuntu/myapp/"
+          strip_components: 1
+      
+      - name: Run Flask Command on EC2
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd /home/ubuntu/myapp/
+            source ./bin/activate
+            flask --app myapi run --host=0.0.0.0 --port=5000

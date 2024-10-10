@@ -16,6 +16,7 @@ apt -y install \
     nginx
 
 sudo chown -R ubuntu /var/www/html
+sudo chown -R ubuntu /home/ubuntu/myapp/
 
 mkdir /home/ubuntu/myapp
 cd /home/ubuntu/myapp

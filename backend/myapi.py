@@ -6,10 +6,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Configure MySQL
-app.config['MYSQL_USER'] = '_USER_'
-app.config['MYSQL_PASSWORD'] = '_PASSWORD_'
-app.config['MYSQL_HOST'] = '_HOST_'
-app.config['MYSQL_DB'] = '_DBNAME_'
+app.config['MYSQL_USER'] = 'tperson_user'
+app.config['MYSQL_PASSWORD'] = 'tperson_passwd'
+app.config['MYSQL_HOST'] = 'terraform-20241010190603936200000001.cb6m8wwsynru.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DB'] = 'tperson'
 
 mysql = MySQL(app)
 
