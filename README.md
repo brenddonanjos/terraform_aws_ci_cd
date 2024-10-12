@@ -9,17 +9,17 @@
 ```
 terrafom apply
 ```
-<p>Conecte via SSH na máquina do EC2</p>
+<p>Conecte via SSH na máquina do EC2:</p>
 
 ```
 ssh -i <path_da_chave.pem> ubuntu@<endereco_ipv4_publico>
 ```
-<p>Conecte no RDS via mysql client e insira o password quando solicitado</p>
+<p>Conecte no RDS via mysql client e insira o password quando solicitado:</p>
 
 ```
 mysql -h <host_do_rds>  -u tperson_user -p
 ```
-<p>Execute a criação da tabela manualmente</p>
+<p>Execute a criação da tabela manualmente:</p>
 
 ```
 USE tperson;
