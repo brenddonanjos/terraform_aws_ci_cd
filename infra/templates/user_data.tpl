@@ -1,5 +1,3 @@
-#!/bin/bash
-
 set -o errexit
 set -o pipefail
 set -o nounset
@@ -14,9 +12,6 @@ apt -y install \
     pkg-config \
     default-libmysqlclient-dev \
     nginx
-
-sudo chown -R ubuntu /var/www/html
-sudo chown -R ubuntu /home/ubuntu/myapp/
 
 mkdir /home/ubuntu/myapp
 cd /home/ubuntu/myapp
