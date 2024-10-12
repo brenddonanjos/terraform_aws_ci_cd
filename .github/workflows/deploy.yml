@@ -19,9 +19,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: |
-            frontend/*
-            backend/*
-            database/*
+            frontend
+            backend
+            database
             docker-compose.yml
             Dockerfile
           target: "/home/ubuntu/myapp/"
