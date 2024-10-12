@@ -12,16 +12,27 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
+      - name: Config BackEnd file
+        run: |
+          sed -i 's/_USER_/${{ secrets.DB_USERNAME }}/g' backend/app.py
+          sed -i 's/_PASSWORD_/${{ secrets.DB_PASSWORD }}/g' backend/app.py
+          sed -i 's/_DBHOST_/${{ secrets.DB_HOST }}/g' backend/app.py
+          sed -i 's/_DBNAME_/${{ secrets.DB_NAME }}/g' backend/app.py
+
+      - name: Config FrontEnd file
+        run: |
+          sed -i 's/_API_ADDRESS_/${{ secrets.HOST }}/g' frontend/index.html
+
       - name: Deploy Project Files
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "backend/*"
+          source: "."
           target: "/home/ubuntu/myapp/"
-          timeout: "120s"
           strip_components: 1
+          exclude: "infra/"
       
       - name: Run Docker Compose on EC2
         uses: appleboy/ssh-action@v0.1.7
