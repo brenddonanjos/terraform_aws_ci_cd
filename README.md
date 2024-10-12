@@ -31,4 +31,5 @@ CREATE TABLE People (
 );
 ```
 
-O sistema está no ar:  <b>http://<endereco_ipv4_publico> <b> 
+O sistema está no ar!  
+<p><b>http://<endereco_ipv4_publico> <b> </p>
