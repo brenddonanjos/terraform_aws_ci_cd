@@ -21,8 +21,7 @@ jobs:
           source: "."
           target: "/home/ubuntu/myapp/"
           timeout: 120
-          exclude:
-            - "infra/*"
+          exclude: "infra/*"
           strip_components: 1
       
       - name: Run Docker Compose on EC2
