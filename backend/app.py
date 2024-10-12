@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
 from flask_cors import CORS
-from migrations import create_people_table  # Import migration function
 
 app = Flask(__name__)
 CORS(app)
@@ -13,9 +12,6 @@ app.config['MYSQL_HOST'] = '_DBHOST_'
 app.config['MYSQL_DB'] = '_DBNAME_'
 
 mysql = MySQL(app)
-
-# Create the People table (if it doesn't exist)
-create_people_table(app)
 
 # Create a new person (C in CRUD)
 @app.route('/people', methods=['POST'])
