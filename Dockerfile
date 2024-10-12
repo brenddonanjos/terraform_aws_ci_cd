@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     python3-pip \
     python3-venv \
-    mysql-server\
+    mysql-server \
     pkg-config \
     default-libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
