@@ -18,12 +18,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source-files: |
-            frontend
-            backend
-            database
-            docker-compose.yml
-            Dockerfile
+          source: "backend/*"
           target: "/home/ubuntu/myapp/"
           timeout: "120s"
           strip_components: 1
