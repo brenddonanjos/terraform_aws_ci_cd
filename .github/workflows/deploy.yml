@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "."
           target: "/home/ubuntu/myapp/"
-          timeout: 120
+          timeout: "120s"
           exclude: "infra/*"
           strip_components: 1
       
