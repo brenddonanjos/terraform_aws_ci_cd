@@ -20,12 +20,8 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "."
           target: "/home/ubuntu/myapp/"
-          exclude: |
-            infra/*
-            .git
-            .github/*
-            .gitignore
           strip_components: 1
+          exclude: "infra/"
       
       - name: Run Docker Compose on EC2
         uses: appleboy/ssh-action@v0.1.7
@@ -35,4 +31,4 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             cd /home/ubuntu/myapp/
-            sudo docker-compose up
+            sudo docker-compose up -d

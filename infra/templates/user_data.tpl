@@ -6,6 +6,8 @@ set -o nounset
 
 mkdir -p /home/ubuntu/myapp
 
+sudo chown -R ubuntu:ubuntu /home/ubuntu/myapp/
+
 #Docker requirements and install
 sudo apt update
 sudo apt-get install -y \
