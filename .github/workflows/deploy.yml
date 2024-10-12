@@ -18,10 +18,14 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "."
+          source: |
+            frontend/*
+            backend/*
+            database/*
+            docker-compose.yml
+            Dockerfile
           target: "/home/ubuntu/myapp/"
           timeout: "120s"
-          exclude: "infra/*"
           strip_components: 1
       
       - name: Run Docker Compose on EC2
