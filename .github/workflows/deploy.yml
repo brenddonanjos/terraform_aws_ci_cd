@@ -20,8 +20,10 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "."
           target: "/home/ubuntu/myapp/"
+          timeout: 120
+          exclude:
+            - "infra/*"
           strip_components: 1
-          exclude: "infra/"
       
       - name: Run Docker Compose on EC2
         uses: appleboy/ssh-action@v0.1.7
