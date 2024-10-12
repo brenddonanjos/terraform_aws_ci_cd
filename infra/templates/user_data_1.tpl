@@ -3,8 +3,8 @@
 set -o errexit
 set -o pipefail
 set -o nounset
-
-mkdir -p /home/ubuntu/myapp
+ 
+mkdir /home/ubuntu/myapp
 
 #Docker requirements and install
 sudo apt update

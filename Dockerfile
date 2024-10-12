@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the application code and requirements file
-COPY ./backend .
+COPY ./backend /app
 
 RUN python3 -m venv /app/venv && \
     /app/venv/bin/pip install --upgrade pip && \
@@ -19,5 +19,3 @@ RUN python3 -m venv /app/venv && \
     
 EXPOSE 5000
 
-# Run the Flask app
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
