@@ -1,5 +1,5 @@
 ## Infraestructura como código
-<p  align="center">Este projeto automatiza a criação de uma instância EC2 e um banco RDS usando Terraform e realiza o deploy de uma aplicação containerizada via Docker utilizando GitHub Actions.</p>
+<p  align="center">Este projeto automatiza a criação de uma instância EC2 e um banco RDS usando Terraform e realiza o deploy de uma aplicação containerizada via Docker utilizando GitHub Actions. </p>
   
 
 ###  Instalação
